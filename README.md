@@ -4,7 +4,13 @@
 
 When a payment succeeds but its confirmation is lost, an application can remain unfinished. This project explores how an agent could gather reliable evidence, propose only permitted recovery steps, and verify the final result.
 
-> **Status:** Stage 01 foundation is being verified. This is a synthetic technical experiment, not a deployed government service or a working recovery agent. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
+> **Status:** **Stage 01 foundation passed local verification on 11 October 2026.** This is a synthetic technical experiment, not a deployed government service or a working recovery agent. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
+
+## Foundation preview
+
+![Stage 01 local health page](assets/foundation.png)
+
+A screenshot of the local foundation. API health is not a verified recovery result.
 
 ## The first workflow
 
@@ -45,7 +51,7 @@ The hypothesis is that adaptive evidence selection can improve correct recovery 
 
 A planned paired evaluation will give both approaches the same tools, permissions, budgets and approval schedule. It will measure verified recovery, duplicate effects, wrong receipt links, unauthorized changes, false success reports, unnecessary review, time and cost. Synthetic results will be reported as synthetic, with denominators and uncertainty intervals.
 
-No performance, savings or safety result is claimed yet.
+No recovery-performance, savings or production-safety result is claimed. Foundation verification is recorded in [STATUS.md](STATUS.md).
 
 ## Research and originality
 
