@@ -86,13 +86,21 @@ These are **local checks of the implementation**, which is not published in this
 
 The shared Docker development environment was intermittently resource constrained. Connection failures were recorded even when Docker reported the database container healthy. Final verification used a dedicated native PostgreSQL 18.6 process with the same schema and domain checks. Tests were not weakened or replaced with SQLite. Earlier failures are retained in local development records.
 
+## Stage 08 — BLOCKED at the live-model comparison
+
+The private evaluation plan froze 200 distinct synthetic scenarios, 20 in each of ten withheld fault combinations, with 100 recoverable and 100 unresolvable or unprovable cases. A separate observability contract classifies cases before any model outcome. A 40-case subset is reserved for repeated model runs.
+
+A complete **fixed/fixed infrastructure check** used the same conventional planner on both arms. Each arm resolved 100/100 declared recoverable cases, reviewed 100/100 unresolvable cases, made 1,220 gateway calls and recorded no observed false success or critical effect. The paired recoverable-completion difference was 0.00 with a [0.00, 0.00] stratified bootstrap interval, as expected for two identical deterministic planners. The per-arm 100/100 recoverable rate has a descriptive Wilson 95% interval of approximately [0.963, 1.000]. This is runner parity, **not** an AI comparison or a production safety claim.
+
+The local code gate passed **235 Python tests with zero skips**, schema drift, lint and frontend production build. The required real-model versus fixed-baseline experiment and 40-case repeat analysis are **NOT RUN**: no model, local key or explicit USD cap is configured. Thus Stage 08 is **BLOCKED** and no AI advantage verdict is reported. Full raw traces and implementation remain in the private workspace; this public repository intentionally contains only the curated summary.
+
 ## Not evaluated yet
 
 - Production workflow scheduling and real provider effects.
-- Fixed-rule baseline versus a live adaptive model planner on a held-out set.
+- Fixed-rule baseline versus a live adaptive model planner on the frozen held-out set.
 - Live model behavior, cost or tool-selection advantage.
 - Officer usability with real people, real service integration or institutional benefit.
 
-The next development step is Agent 1 Prompt 08. No cloud deployment, registration, outreach or paid model experiment has occurred.
+The next development step is to complete Stage 08's explicitly capped live-model comparison; Prompt 09 is not started. No cloud deployment, registration, outreach or paid model experiment has occurred.
 
 **Competition readiness: HOLD.** Exact UAE demand and meaningful differentiation remain unproven. A technical stage pass is not evidence of originality or government impact.

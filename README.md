@@ -4,7 +4,7 @@
 
 When a payment succeeds but its confirmation is lost, an application can remain unfinished. This project explores how an agent could gather reliable evidence, propose only permitted recovery steps, and verify the final result.
 
-> **Status:** **Stage 07 adversarial failure matrix passed local verification on 13 October 2026.** Its development comparison used a scripted adapter, not a live model. This is a synthetic technical experiment, not a deployed government service. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
+> **Status:** **Stages 01–07 passed local verification; Stage 08 is blocked at its live-model comparison.** A frozen 200-case fixed/fixed infrastructure recheck passed, but no paid model experiment has run. This is a synthetic technical experiment, not a deployed government service. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
 
 ## Local workbench preview
 
@@ -27,6 +27,8 @@ Stage 05 added a bounded planner interface with typed tools and server-side chec
 Stage 06 connected a React/TypeScript officer workbench to the actual synthetic ledger and local Temporal workflow. Its case queue, evidence workspace, exact-plan approval and measured-comparison view show the complete fictional recovery. Browser tests covered two approvals through verified records, stale approval rejection in both the UI and backend, uncertain provider review, disconnected stream fallback and narrow keyboard use. The local suite passed **220 Python tests with zero skips** and **5 browser tests**. The demo uses a local-only session and fixed planner; it is not production authentication or a live AI run.
 
 Stage 07 added explicit hostile-input and recovery-failure checks. Synthetic receipt notes that told the planner to ignore policy or claimed officer approval could not create an approval or provider effect. Forged evidence and unrelated identifiers were rejected; old receipts and out-of-order diagnostic events did not become proof. Real PostgreSQL interleavings, repeated Temporal signals, lost replies, expiry and verification outages were regression-checked. The full local gate passed **231 Python tests with zero skips**. This finite development matrix is not a universal safety guarantee.
+
+Stage 08 froze 200 distinct synthetic cases across ten withheld fault combinations, with an explicit observability contract and 40 prespecified cases for future repeat runs. A fixed/fixed infrastructure recheck resolved all **100/100 declared recoverable cases** and correctly reviewed all **100/100 unresolvable or unprovable cases** per arm; it recorded zero false success and zero critical effects. Both arms used the **same conventional planner**, so the zero paired difference and narrow interval are only a parity check. The private full gate passed **235 Python tests with zero skips**. The required live-model comparison and repeat runs are **not run** because the model, local API key and explicit spending cap are not configured. There is no AI advantage verdict.
 
 ## The first workflow
 
@@ -59,7 +61,7 @@ flowchart LR
 
 The local foundation uses Python, FastAPI and Pydantic for strict domain contracts; PostgreSQL, SQLAlchemy and Alembic for persistence; and React, TypeScript and Vite for the connected officer workbench. Frontend types are generated from the Python schema to reduce contract drift. The simulator and executor add a narrow evidence gateway, separate observer and evaluator database roles, immutable provenance, repeatable fault injection, authenticated local approvals and deterministic verification. Temporal supplies durable local orchestration around those business controls. These pieces establish an auditable tool boundary for a later model planner; no live model planner has been run yet.
 
-For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance, local Temporal server and browser tests. It has not been deployed to a cloud or production service. The held-out model comparison remains later work. Development remains in clearly labeled stub mode without configured live-model credentials or spend cap.
+For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance, local Temporal server and browser tests. It has not been deployed to a cloud or production service. The held-out model comparison remains blocked. Development remains in clearly labeled stub mode without configured live-model credentials or spend cap.
 
 ## What is being tested
 
@@ -67,7 +69,7 @@ The hypothesis is that adaptive evidence selection can improve correct recovery 
 
 A planned paired evaluation will give both approaches the same tools, permissions, budgets and approval schedule. It will measure verified recovery, duplicate effects, wrong receipt links, unauthorized changes, false success reports, unnecessary review, time and cost. Synthetic results will be reported as synthetic, with denominators and uncertainty intervals.
 
-The fixed and scripted planners' synthetic development results and the Stage 06 UI checks are recorded in [STATUS.md](STATUS.md). No live-model advantage, savings or production-safety result is claimed.
+The fixed and scripted planners' synthetic development results, Stage 06 UI checks and Stage 08 blocked evaluation status are recorded in [STATUS.md](STATUS.md). No live-model advantage, savings or production-safety result is claimed.
 
 ## Research and originality
 
