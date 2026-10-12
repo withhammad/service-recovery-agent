@@ -4,7 +4,7 @@
 
 When a payment succeeds but its confirmation is lost, an application can remain unfinished. This project explores how an agent could gather reliable evidence, propose only permitted recovery steps, and verify the final result.
 
-> **Status:** **Stage 03 approval-bound local executor passed verification on 13 October 2026.** This is a synthetic technical experiment, not a deployed government service or a model-driven recovery agent. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
+> **Status:** **Stage 04 durable local workflow and fixed baseline passed verification on 13 October 2026.** This is a synthetic technical experiment, not a deployed government service or a model-driven recovery agent. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
 
 ## Local foundation preview
 
@@ -18,7 +18,9 @@ The private implementation now has a PostgreSQL-backed simulator with thirteen s
 
 Four local fault points model interruption before commit, after a simulated external commit, before local acknowledgement and during verification. Seed replay, scope boundaries, and database-role denial of hidden truth/reset were checked against real local PostgreSQL. At the Stage 02 milestone, the full local suite passed **175 Python tests**, including **30 simulator integration cases**, plus schema-drift, lint and frontend production-build checks. These are development tests, not recovery-success or model-performance results. See [the recorded milestones](STATUS.md).
 
-The next local milestone adds one-action plans, a separate approver session and an executor for **link receipt** and **submit application**. It commits a stable operation ID and provider key before each simulated effect, checks provider-side application versions and idempotency, and requires fresh business-record verification before declaring success. A deliberately weaker provider sends uncertain writes to review instead of retrying without safe proof. The verified suite now passes **197 Python tests**, including 21 executor integration cases. This demonstrates controlled local behavior, not safety against a real external provider.
+Stage 03 added one-action plans, a separate approver session and an executor for **link receipt** and **submit application**. It commits a stable operation ID and provider key before each simulated effect, checks provider-side application versions and idempotency, and requires fresh business-record verification before declaring success. A deliberately weaker provider sends uncertain writes to review instead of retrying without safe proof. Its verified suite passed **197 Python tests**, including 21 executor integration cases.
+
+Stage 04 added a local Temporal workflow, durable approval/rejection handling, worker restart recovery and a capable fixed planner without AI. In a 14-pair **development** run, fixed-planner arms correctly resolved all **14/14 predeclared recoverable cases** and reviewed all **14/14 unrecoverable cases**, with **0/28 false success** against independent simulator state. The full local suite passed **204 Python tests**. This is a strong conventional baseline, not a held-out comparison or a model-performance claim. See [the recorded milestone](STATUS.md).
 
 ## The first workflow
 
@@ -49,9 +51,9 @@ flowchart LR
 
 ## AI engineering and deployment foundations
 
-The local foundation uses Python, FastAPI and Pydantic for strict domain contracts; PostgreSQL, SQLAlchemy and Alembic for persistence; and React, TypeScript and Vite for the health interface. Frontend types are generated from the Python schema to reduce contract drift. The simulator and executor add a narrow evidence gateway, separate observer and evaluator database roles, immutable provenance, repeatable fault injection, authenticated local approvals and deterministic verification. These pieces establish an auditable tool boundary for a later model planner; no live model planner has been run yet.
+The local foundation uses Python, FastAPI and Pydantic for strict domain contracts; PostgreSQL, SQLAlchemy and Alembic for persistence; and React, TypeScript and Vite for the health interface. Frontend types are generated from the Python schema to reduce contract drift. The simulator and executor add a narrow evidence gateway, separate observer and evaluator database roles, immutable provenance, repeatable fault injection, authenticated local approvals and deterministic verification. Temporal supplies durable local orchestration around those business controls. These pieces establish an auditable tool boundary for a later model planner; no live model planner has been run yet.
 
-For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance and browser tests. It has not been deployed to a cloud or production service. Later stages propose durable Temporal scheduling and a capable fixed-rule baseline alongside an adaptive model planner; those planners and workflow components are not implemented. Development remains in clearly labeled stub mode without model credentials.
+For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance, local Temporal server and browser tests. It has not been deployed to a cloud or production service. The adaptive model planner and officer interface remain later work. Development remains in clearly labeled stub mode without model credentials.
 
 ## What is being tested
 
@@ -59,7 +61,7 @@ The hypothesis is that adaptive evidence selection can improve correct recovery 
 
 A planned paired evaluation will give both approaches the same tools, permissions, budgets and approval schedule. It will measure verified recovery, duplicate effects, wrong receipt links, unauthorized changes, false success reports, unnecessary review, time and cost. Synthetic results will be reported as synthetic, with denominators and uncertainty intervals.
 
-No recovery-performance, savings or production-safety result is claimed. Local verification is recorded in [STATUS.md](STATUS.md).
+The fixed planner's synthetic development result is recorded in [STATUS.md](STATUS.md). No model advantage, savings or production-safety result is claimed.
 
 ## Research and originality
 
@@ -71,7 +73,7 @@ This project is being explored in the context of UAE digital services and a poss
 - [Mnemosyne](https://arxiv.org/html/2607.00269v3) specifies workflow repair and external-effect handling, including paths outside its reported evaluation. Unevaluated prior work still constrains originality.
 - [Atomix](https://arxiv.org/abs/2602.14849), [Cordon](https://arxiv.org/abs/2606.17573), [Entra Agent ID](https://learn.microsoft.com/entra/agent-id/authorization-agent-id) and [AgentCore](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html) overlap transactional execution or agent permissions.
 
-**Competition readiness: HOLD.** A verified local executor does not establish originality, institutional demand or measurable societal value.
+**Competition readiness: HOLD.** A verified local workflow and fixed baseline do not establish originality, institutional demand or measurable societal value.
 
 ## About this repository
 

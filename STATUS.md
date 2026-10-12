@@ -38,6 +38,18 @@ The private implementation adds a local seeded-session proposal, approval and ex
 
 The final local `make check` passed **197 Python tests with zero skips**, including 21 Stage 03 executor integration cases, schema-drift check, lint and frontend production build. The local demo completed two separately approved simulated actions and reached `SUBMITTED`/`ACCEPTED`. No model planner, durable workflow, real provider or production identity system was involved.
 
+## Stage 04 — PASS
+
+The private implementation now has a local Temporal workflow with persisted approval signals/timers, bounded retries and reconciliation of the same recorded action after worker restarts. A capable fixed planner reads authoritative evidence, waits for delayed observations, validates constraints and sends unobservable cases to review. No AI model was involved.
+
+| Mandatory check | Recorded local result |
+| --- | --- |
+| Fixed planner recovers supported cases | PASS — in the first 14-pair synthetic development run, 14/14 predeclared recoverable arms resolved with independent final-state confirmation; 14/14 unrecoverable arms went to review; false success was 0/28. Both arms ran the fixed planner as an infrastructure parity check. |
+| Worker restarts before/after effects and during approval | PASS — real local Temporal worker restart tests covered before-commit, after-commit and lost-local-ack faults, plus approval recorded while the worker was offline. Final controlled provider operation counts showed no unexplained duplicate. |
+| Measurements and denominators saved | PASS — local JSON records the family, seed, approval schedule, outcomes, independent truth verdict, tool calls, provider rows and event kinds. The 28 arms comprise 14 recoverable and 14 unrecoverable cases. |
+
+The final local `make check` passed **204 Python tests with zero skips**, schema drift, lint and frontend build; migration and dependency-lock checks also passed. This is a development fixture result, not a held-out agent comparison. The fixed planner already solves the recoverable development cases, so a model cannot claim an advantage on them by weakening this comparator.
+
 These are **local checks of the implementation**, which is not published in this portfolio repository. They are not GitHub-hosted CI results and cannot be independently rerun from this showcase alone. The screenshot shows the real local health page, not a recovery demonstration.
 
 ## Environment limitation and resolution
@@ -46,11 +58,11 @@ The shared Docker development environment was intermittently resource constraine
 
 ## Not evaluated yet
 
-- Durable workflow scheduling, automated restart recovery and production provider effects.
-- Fixed-rule baseline versus adaptive model planner.
+- Production workflow scheduling and real provider effects.
+- Fixed-rule baseline versus adaptive model planner on a held-out set.
 - Live model behavior, cost or tool-selection advantage.
 - Officer usability, real service integration or institutional benefit.
 
-The next development step is Agent 1 Prompt 04. No cloud deployment, registration, outreach or paid model experiment has occurred.
+The next development step is Agent 1 Prompt 05. No cloud deployment, registration, outreach or paid model experiment has occurred.
 
 **Competition readiness: HOLD.** Exact UAE demand and meaningful differentiation remain unproven. A technical stage pass is not evidence of originality or government impact.
