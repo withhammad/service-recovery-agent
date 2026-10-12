@@ -4,7 +4,7 @@
 
 When a payment succeeds but its confirmation is lost, an application can remain unfinished. This project explores how an agent could gather reliable evidence, propose only permitted recovery steps, and verify the final result.
 
-> **Status:** **Stage 04 durable local workflow and fixed baseline passed verification on 13 October 2026.** This is a synthetic technical experiment, not a deployed government service or a model-driven recovery agent. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
+> **Status:** **Stage 05 bounded investigation planner passed local verification on 13 October 2026.** Its development comparison used a scripted adapter, not a live model. This is a synthetic technical experiment, not a deployed government service. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
 
 ## Local foundation preview
 
@@ -21,6 +21,8 @@ Four local fault points model interruption before commit, after a simulated exte
 Stage 03 added one-action plans, a separate approver session and an executor for **link receipt** and **submit application**. It commits a stable operation ID and provider key before each simulated effect, checks provider-side application versions and idempotency, and requires fresh business-record verification before declaring success. A deliberately weaker provider sends uncertain writes to review instead of retrying without safe proof. Its verified suite passed **197 Python tests**, including 21 executor integration cases.
 
 Stage 04 added a local Temporal workflow, durable approval/rejection handling, worker restart recovery and a capable fixed planner without AI. In a 14-pair **development** run, fixed-planner arms correctly resolved all **14/14 predeclared recoverable cases** and reviewed all **14/14 unrecoverable cases**, with **0/28 false success** against independent simulator state. The full local suite passed **204 Python tests**. This is a strong conventional baseline, not a held-out comparison or a model-performance claim. See [the recorded milestone](STATUS.md).
+
+Stage 05 added a bounded planner interface with typed tools and server-side checks. A six-pair **scripted development** run tied the fixed baseline on recoverable and review outcomes; the scripted selector made one invalid proposal that code blocked. The full local suite passed **216 Python tests**. A real-model adapter exists behind explicit credentials, current pricing and a spend cap, but only its request handling was mock-tested. **No live model call or AI advantage is claimed.**
 
 ## The first workflow
 
@@ -53,7 +55,7 @@ flowchart LR
 
 The local foundation uses Python, FastAPI and Pydantic for strict domain contracts; PostgreSQL, SQLAlchemy and Alembic for persistence; and React, TypeScript and Vite for the health interface. Frontend types are generated from the Python schema to reduce contract drift. The simulator and executor add a narrow evidence gateway, separate observer and evaluator database roles, immutable provenance, repeatable fault injection, authenticated local approvals and deterministic verification. Temporal supplies durable local orchestration around those business controls. These pieces establish an auditable tool boundary for a later model planner; no live model planner has been run yet.
 
-For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance, local Temporal server and browser tests. It has not been deployed to a cloud or production service. The adaptive model planner and officer interface remain later work. Development remains in clearly labeled stub mode without model credentials.
+For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance, local Temporal server and browser tests. It has not been deployed to a cloud or production service. The officer interface and held-out model comparison remain later work. Development remains in clearly labeled stub mode without configured live-model credentials or spend cap.
 
 ## What is being tested
 
@@ -61,7 +63,7 @@ The hypothesis is that adaptive evidence selection can improve correct recovery 
 
 A planned paired evaluation will give both approaches the same tools, permissions, budgets and approval schedule. It will measure verified recovery, duplicate effects, wrong receipt links, unauthorized changes, false success reports, unnecessary review, time and cost. Synthetic results will be reported as synthetic, with denominators and uncertainty intervals.
 
-The fixed planner's synthetic development result is recorded in [STATUS.md](STATUS.md). No model advantage, savings or production-safety result is claimed.
+The fixed and scripted planners' synthetic development results are recorded in [STATUS.md](STATUS.md). No live-model advantage, savings or production-safety result is claimed.
 
 ## Research and originality
 

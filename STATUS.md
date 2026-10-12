@@ -50,6 +50,18 @@ The private implementation now has a local Temporal workflow with persisted appr
 
 The final local `make check` passed **204 Python tests with zero skips**, schema drift, lint and frontend build; migration and dependency-lock checks also passed. This is a development fixture result, not a held-out agent comparison. The fixed planner already solves the recoverable development cases, so a model cannot claim an advantage on them by weakening this comparator.
 
+## Stage 05 — PASS
+
+The private implementation adds a bounded investigation planner with eight strict typed tools and server-side semantic checks. The real-model adapter was tested against a mock HTTP transport; the local configuration still has a placeholder model/key and no verified price or spend cap. **No live model request was run.**
+
+| Mandatory check | Recorded local result |
+| --- | --- |
+| Evidence selection and bounded proposal/review | PASS — a six-pair scripted development run resolved 8/8 predeclared recoverable arms and reviewed 4/4 unrecoverable arms across fixed and scripted planners, with 0/12 false success. This is scripted behavior, not AI performance. |
+| Unsupported calls and false evidence blocked | PASS — tests rejected unknown tools, malformed arguments, fabricated receipts, unusable model responses and an injected provider note. The scripted selector attempted a wrong-amount proposal; server policy blocked it before effect. |
+| Stub versus live status explicit | PASS — usage, prompt/model identifiers and outcomes are recorded for the scripted run. Actual live token usage, cost and model quality remain **NOT RUN**. |
+
+The final local `make check` passed **216 Python tests with zero skips**, schema drift, lint and frontend build. Migration and lock checks passed. The fixed planner remains the conventional comparator; the scripted run does not demonstrate an AI improvement.
+
 These are **local checks of the implementation**, which is not published in this portfolio repository. They are not GitHub-hosted CI results and cannot be independently rerun from this showcase alone. The screenshot shows the real local health page, not a recovery demonstration.
 
 ## Environment limitation and resolution
@@ -59,10 +71,10 @@ The shared Docker development environment was intermittently resource constraine
 ## Not evaluated yet
 
 - Production workflow scheduling and real provider effects.
-- Fixed-rule baseline versus adaptive model planner on a held-out set.
+- Fixed-rule baseline versus a live adaptive model planner on a held-out set.
 - Live model behavior, cost or tool-selection advantage.
 - Officer usability, real service integration or institutional benefit.
 
-The next development step is Agent 1 Prompt 05. No cloud deployment, registration, outreach or paid model experiment has occurred.
+The next development step is Agent 1 Prompt 06. No cloud deployment, registration, outreach or paid model experiment has occurred.
 
 **Competition readiness: HOLD.** Exact UAE demand and meaningful differentiation remain unproven. A technical stage pass is not evidence of originality or government impact.
