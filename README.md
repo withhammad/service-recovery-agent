@@ -4,7 +4,7 @@
 
 When a payment succeeds but its confirmation is lost, an application can remain unfinished. This project explores how an agent could gather reliable evidence, propose only permitted recovery steps, and verify the final result.
 
-> **Status:** **Stage 06 connected officer workbench passed local verification on 13 October 2026.** Its development comparison used a scripted adapter, not a live model. This is a synthetic technical experiment, not a deployed government service. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
+> **Status:** **Stage 07 adversarial failure matrix passed local verification on 13 October 2026.** Its development comparison used a scripted adapter, not a live model. This is a synthetic technical experiment, not a deployed government service. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
 
 ## Local workbench preview
 
@@ -25,6 +25,8 @@ Stage 04 added a local Temporal workflow, durable approval/rejection handling, w
 Stage 05 added a bounded planner interface with typed tools and server-side checks. A six-pair **scripted development** run tied the fixed baseline on recoverable and review outcomes; the scripted selector made one invalid proposal that code blocked. The full local suite passed **216 Python tests**. A real-model adapter exists behind explicit credentials, current pricing and a spend cap, but only its request handling was mock-tested. **No live model call or AI advantage is claimed.**
 
 Stage 06 connected a React/TypeScript officer workbench to the actual synthetic ledger and local Temporal workflow. Its case queue, evidence workspace, exact-plan approval and measured-comparison view show the complete fictional recovery. Browser tests covered two approvals through verified records, stale approval rejection in both the UI and backend, uncertain provider review, disconnected stream fallback and narrow keyboard use. The local suite passed **220 Python tests with zero skips** and **5 browser tests**. The demo uses a local-only session and fixed planner; it is not production authentication or a live AI run.
+
+Stage 07 added explicit hostile-input and recovery-failure checks. Synthetic receipt notes that told the planner to ignore policy or claimed officer approval could not create an approval or provider effect. Forged evidence and unrelated identifiers were rejected; old receipts and out-of-order diagnostic events did not become proof. Real PostgreSQL interleavings, repeated Temporal signals, lost replies, expiry and verification outages were regression-checked. The full local gate passed **231 Python tests with zero skips**. This finite development matrix is not a universal safety guarantee.
 
 ## The first workflow
 
