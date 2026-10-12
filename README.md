@@ -4,13 +4,19 @@
 
 When a payment succeeds but its confirmation is lost, an application can remain unfinished. This project explores how an agent could gather reliable evidence, propose only permitted recovery steps, and verify the final result.
 
-> **Status:** **Stage 01 foundation passed local verification on 11 October 2026.** This is a synthetic technical experiment, not a deployed government service or a working recovery agent. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
+> **Status:** **Stage 02 simulator and scoped evidence tools passed local verification on 13 October 2026.** This is a synthetic technical experiment, not a deployed government service or a working recovery agent. Exact UAE demand, meaningful differentiation and institutional benefit remain unproven.
 
-## Foundation preview
+## Local foundation preview
 
 ![Stage 01 local health page](assets/foundation.png)
 
 A screenshot of the local foundation. API health is not a verified recovery result.
+
+## Verified development progress
+
+The private implementation now has a PostgreSQL-backed simulator with thirteen seeded failure families. It stores hidden case truth separately from the observations available to an investigator. Six scoped reads expose application, payment, receipt, submission, recent-event and provider-capability evidence. Each result includes source, observation and provider-as-of times, version, outcome/error status and a digest. A delayed receipt can be unknown before it becomes visible; a provider timeout never becomes a payment failure claim.
+
+Four local fault points model interruption before commit, after a simulated external commit, before local acknowledgement and during verification. Seed replay, scope boundaries, and database-role denial of hidden truth/reset were checked against real local PostgreSQL. The full local suite passed **175 Python tests**, including **30 Stage 02 simulator integration cases**, plus schema-drift, lint and frontend production-build checks. These are development tests, not recovery-success or model-performance results. See [the recorded milestone](STATUS.md).
 
 ## The first workflow
 
@@ -39,11 +45,11 @@ flowchart LR
 - A timeout does not prove failure. Missing or contradictory evidence leads to review.
 - Resolution requires a matching successful payment, correct receipt association and independently verified accepted submission.
 
-## Engineering direction
+## AI engineering and deployment foundations
 
-The local foundation uses Python, FastAPI and Pydantic for domain contracts; PostgreSQL, SQLAlchemy and Alembic for persistence setup; and React, TypeScript and Vite for the officer interface. Frontend types are generated from the Python schema to reduce contract drift.
+The local foundation uses Python, FastAPI and Pydantic for strict domain contracts; PostgreSQL, SQLAlchemy and Alembic for persistence; and React, TypeScript and Vite for the health interface. Frontend types are generated from the Python schema to reduce contract drift. The simulator adds a narrow evidence gateway, separate observer and evaluator database roles, immutable provenance and repeatable fault injection. These pieces establish an auditable tool boundary for a later model planner; no live model planner has been run yet.
 
-Later stages propose a shared Temporal executor for both a capable fixed-rule recovery baseline and an adaptive model planner. These recovery components are not implemented in Stage 01. Development begins without model credentials, in clearly labeled stub mode.
+For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance and browser tests. It has not been deployed to a cloud or production service. Later stages propose a shared Temporal executor for both a capable fixed-rule baseline and an adaptive model planner; those recovery components are not implemented. Development remains in clearly labeled stub mode without model credentials.
 
 ## What is being tested
 
@@ -51,7 +57,7 @@ The hypothesis is that adaptive evidence selection can improve correct recovery 
 
 A planned paired evaluation will give both approaches the same tools, permissions, budgets and approval schedule. It will measure verified recovery, duplicate effects, wrong receipt links, unauthorized changes, false success reports, unnecessary review, time and cost. Synthetic results will be reported as synthetic, with denominators and uncertainty intervals.
 
-No recovery-performance, savings or production-safety result is claimed. Foundation verification is recorded in [STATUS.md](STATUS.md).
+No recovery-performance, savings or production-safety result is claimed. Local verification is recorded in [STATUS.md](STATUS.md).
 
 ## Research and originality
 
@@ -63,10 +69,10 @@ This project is being explored in the context of UAE digital services and a poss
 - [Mnemosyne](https://arxiv.org/html/2607.00269v3) specifies workflow repair and external-effect handling, including paths outside its reported evaluation. Unevaluated prior work still constrains originality.
 - [Atomix](https://arxiv.org/abs/2602.14849), [Cordon](https://arxiv.org/abs/2606.17573), [Entra Agent ID](https://learn.microsoft.com/entra/agent-id/authorization-agent-id) and [AgentCore](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html) overlap transactional execution or agent permissions.
 
-**Competition readiness: HOLD.** A working technical foundation does not establish originality, institutional demand or measurable societal value.
+**Competition readiness: HOLD.** A verified local simulator does not establish originality, institutional demand or measurable societal value.
 
 ## About this repository
 
 This is the **public portfolio and progress repository**. It contains project explanation, architecture and selected verification evidence. Implementation source, local configuration and development materials are kept outside this public repository. It is not an installable source distribution.
 
-Project owner: [Hammad](https://github.com/withhammad). Last updated: 11 October 2026.
+Project owner: [Hammad](https://github.com/withhammad). Last updated: 13 October 2026.
