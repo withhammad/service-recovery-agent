@@ -26,6 +26,18 @@ The private implementation now seeds synthetic payment/application failure scena
 
 With real local PostgreSQL, the final `make check` passed **175 Python tests with zero skips**, including 30 Stage 02 integration cases, plus schema-drift check, lint and frontend production build. Alembic found no migration/model drift. The tests cover thirteen scenario families, four fault points, replay, eventual visibility, tenant isolation and access controls. They are local records in the private implementation, not GitHub CI output.
 
+## Stage 03 — PASS
+
+The private implementation adds a local seeded-session proposal, approval and executor path for exactly two synthetic actions: link receipt and submit application. It persists stable operation IDs and provider keys before simulated effects, validates current proof and provider-side versions, and verifies final business records before resolving a case.
+
+| Mandatory check | Recorded local result |
+| --- | --- |
+| Unsupported, unauthorized and stale plans rejected | PASS — invalid payment/receipt proof, missing conditional writes, wrong role or tenant, revoked approver, stale version and expired approval were rejected before a provider effect. |
+| Duplicate clicks and retries produce at most one controlled effect | PASS — repeated approval/action calls, worker race, changed arguments under the same key and crash/restart paths were tested with provider-side idempotency and a unique submission constraint. |
+| Ambiguous write without safe reconciliation becomes review | PASS — the weak-provider fixture lacks status lookup and persistent idempotency; a lost reply after commit produced one attempt and `NEEDS_REVIEW` without automatic retry. |
+
+The final local `make check` passed **197 Python tests with zero skips**, including 21 Stage 03 executor integration cases, schema-drift check, lint and frontend production build. The local demo completed two separately approved simulated actions and reached `SUBMITTED`/`ACCEPTED`. No model planner, durable workflow, real provider or production identity system was involved.
+
 These are **local checks of the implementation**, which is not published in this portfolio repository. They are not GitHub-hosted CI results and cannot be independently rerun from this showcase alone. The screenshot shows the real local health page, not a recovery demonstration.
 
 ## Environment limitation and resolution
@@ -34,11 +46,11 @@ The shared Docker development environment was intermittently resource constraine
 
 ## Not evaluated yet
 
-- Approval-bound recovery execution, restart safety and production provider effects.
+- Durable workflow scheduling, automated restart recovery and production provider effects.
 - Fixed-rule baseline versus adaptive model planner.
 - Live model behavior, cost or tool-selection advantage.
 - Officer usability, real service integration or institutional benefit.
 
-The next development step requires the explicit Agent 1 Prompt 03. No cloud deployment, registration, outreach or paid model experiment has occurred.
+The next development step is Agent 1 Prompt 04. No cloud deployment, registration, outreach or paid model experiment has occurred.
 
 **Competition readiness: HOLD.** Exact UAE demand and meaningful differentiation remain unproven. A technical stage pass is not evidence of originality or government impact.
