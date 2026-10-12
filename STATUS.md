@@ -62,7 +62,19 @@ The private implementation adds a bounded investigation planner with eight stric
 
 The final local `make check` passed **216 Python tests with zero skips**, schema drift, lint and frontend build. Migration and lock checks passed. The fixed planner remains the conventional comparator; the scripted run does not demonstrate an AI improvement.
 
-These are **local checks of the implementation**, which is not published in this portfolio repository. They are not GitHub-hosted CI results and cannot be independently rerun from this showcase alone. The screenshot shows the real local health page, not a recovery demonstration.
+## Stage 06 — PASS
+
+The private implementation now has a connected local officer workbench. A synthetic case starts a local Temporal workflow; the officer reads scoped evidence, approves each immutable plan through an authenticated local endpoint, and sees verified state only after independent business-record checks.
+
+| Mandatory check | Recorded local result |
+| --- | --- |
+| Complete UI flow | PASS — a Playwright browser test opened a stalled case, read payment evidence, approved receipt linking and submission separately, and observed verified business state. Real PostgreSQL/Temporal API integration also passed. |
+| Stale approval defense | PASS — an outside application-version change disabled approval in the browser; direct posting of the stale plan/digest returned HTTP 409 without an action effect. |
+| Uncertainty and errors | PASS — provider unavailability led to Needs review without green success; disconnecting the event stream left the case usable via polling. |
+
+The configured full local gate passed **220 Python tests with zero skips**, schema drift, lint and frontend build. **5/5 browser tests** passed; migration and lock checks passed. Desktop and narrow layouts were inspected. These are private local test records, not public GitHub CI results or a real-user study. The workbench remains fictional and stub-mode; no live model, payment or government service was called.
+
+These are **local checks of the implementation**, which is not published in this portfolio repository. They are not GitHub-hosted CI results and cannot be independently rerun from this showcase alone. The current screenshot shows a local synthetic verified case after the tested officer flow.
 
 ## Environment limitation and resolution
 
@@ -73,8 +85,8 @@ The shared Docker development environment was intermittently resource constraine
 - Production workflow scheduling and real provider effects.
 - Fixed-rule baseline versus a live adaptive model planner on a held-out set.
 - Live model behavior, cost or tool-selection advantage.
-- Officer usability, real service integration or institutional benefit.
+- Officer usability with real people, real service integration or institutional benefit.
 
-The next development step is Agent 1 Prompt 06. No cloud deployment, registration, outreach or paid model experiment has occurred.
+The next development step is Agent 1 Prompt 07. No cloud deployment, registration, outreach or paid model experiment has occurred.
 
 **Competition readiness: HOLD.** Exact UAE demand and meaningful differentiation remain unproven. A technical stage pass is not evidence of originality or government impact.
