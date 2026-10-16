@@ -28,7 +28,7 @@ Stage 06 connected a React/TypeScript officer workbench to the actual synthetic 
 
 Stage 07 added explicit hostile-input and recovery-failure checks. Synthetic receipt notes that told the planner to ignore policy or claimed officer approval could not create an approval or provider effect. Forged evidence and unrelated identifiers were rejected; old receipts and out-of-order diagnostic events did not become proof. Real PostgreSQL interleavings, repeated Temporal signals, lost replies, expiry and verification outages were regression-checked. The full local gate passed **231 Python tests with zero skips**. This finite development matrix is not a universal safety guarantee.
 
-Stage 08 froze 200 distinct synthetic cases across ten withheld fault combinations, with an explicit observability contract and 40 prespecified cases for future repeat runs. A fixed/fixed infrastructure recheck resolved all **100/100 declared recoverable cases** and correctly reviewed all **100/100 unresolvable or unprovable cases** per arm; it recorded zero false success and zero critical effects. Both arms used the **same conventional planner**, so the zero paired difference and narrow interval are only a parity check. The private full gate passed **235 Python tests with zero skips**. The required live-model comparison and repeat runs are **not run** because the model, local API key and explicit spending cap are not configured. There is no AI advantage verdict.
+Stage 08 froze 200 distinct synthetic cases across ten withheld fault combinations, with an explicit observability contract and 40 prespecified cases for future repeat runs. A fixed/fixed infrastructure recheck resolved all **100/100 declared recoverable cases** and correctly reviewed all **100/100 unresolvable or unprovable cases** per arm; it recorded zero false success and zero critical effects. Both arms used the **same conventional planner**, so the zero paired difference and narrow interval are only a parity check. A later preflight selected a candidate model and recorded a **USD 10 total ceiling** for the comparison; the full local gate then passed **236 Python tests with zero skips**. The required live-model comparison and repeat runs are **not run** because a usable local API key is absent. There is no AI advantage verdict.
 
 ## The first workflow
 
@@ -61,7 +61,7 @@ flowchart LR
 
 The local foundation uses Python, FastAPI and Pydantic for strict domain contracts; PostgreSQL, SQLAlchemy and Alembic for persistence; and React, TypeScript and Vite for the connected officer workbench. Frontend types are generated from the Python schema to reduce contract drift. The simulator and executor add a narrow evidence gateway, separate observer and evaluator database roles, immutable provenance, repeatable fault injection, authenticated local approvals and deterministic verification. Temporal supplies durable local orchestration around those business controls. These pieces establish an auditable tool boundary for a later model planner; no live model planner has been run yet.
 
-For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance, local Temporal server and browser tests. It has not been deployed to a cloud or production service. The held-out model comparison remains blocked. Development remains in clearly labeled stub mode without configured live-model credentials or spend cap.
+For local deployment engineering, the project has pinned dependencies and lockfiles, database migrations, a readiness endpoint, reproducible startup instructions and a production frontend build. Its verification uses a dedicated local PostgreSQL instance, local Temporal server and browser tests. It has not been deployed to a cloud or production service. The held-out model comparison remains blocked by missing live-model credentials.
 
 ## What is being tested
 
@@ -87,4 +87,4 @@ This project is being explored in the context of UAE digital services and a poss
 
 This is the **public portfolio and progress repository**. It contains project explanation, architecture and selected verification evidence. Implementation source, local configuration and development materials are kept outside this public repository. It is not an installable source distribution.
 
-Project owner: [Hammad](https://github.com/withhammad). Last updated: 13 October 2026.
+Project owner: [Hammad](https://github.com/withhammad). Last updated: 16 October 2026.

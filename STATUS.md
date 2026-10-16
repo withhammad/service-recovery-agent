@@ -1,6 +1,6 @@
 # Project status
 
-As of **13 October 2026**.
+As of **16 October 2026**.
 
 ## Stage 01 — PASS
 
@@ -92,7 +92,7 @@ The private evaluation plan froze 200 distinct synthetic scenarios, 20 in each o
 
 A complete **fixed/fixed infrastructure check** used the same conventional planner on both arms. Each arm resolved 100/100 declared recoverable cases, reviewed 100/100 unresolvable cases, made 1,220 gateway calls and recorded no observed false success or critical effect. The paired recoverable-completion difference was 0.00 with a [0.00, 0.00] stratified bootstrap interval, as expected for two identical deterministic planners. The per-arm 100/100 recoverable rate has a descriptive Wilson 95% interval of approximately [0.963, 1.000]. This is runner parity, **not** an AI comparison or a production safety claim.
 
-The local code gate passed **235 Python tests with zero skips**, schema drift, lint and frontend production build. The required real-model versus fixed-baseline experiment and 40-case repeat analysis are **NOT RUN**: no model, local key or explicit USD cap is configured. Thus Stage 08 is **BLOCKED** and no AI advantage verdict is reported. Full raw traces and implementation remain in the private workspace; this public repository intentionally contains only the curated summary.
+The initial local code gate passed **235 Python tests with zero skips**, schema drift, lint and frontend production build. On 15 October, a pre-run budget amendment selected a candidate model and recorded a **USD 10 total ceiling**. A fresh local gate passed **236 Python tests with zero skips**, schema and migration drift checks, lint, dependency-lock verification and frontend build. The model request and spending controls were mock-tested; no live provider request or charge occurred. The required real-model versus fixed-baseline experiment and 40-case repeat analysis are **NOT RUN** because no usable local API key is configured. Thus Stage 08 is **BLOCKED** and no AI advantage verdict is reported. Full raw traces and implementation remain in the private workspace; this public repository intentionally contains only the curated summary.
 
 ## Not evaluated yet
 
